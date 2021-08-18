@@ -47,7 +47,13 @@ class MovieViewModel : ViewModel() {
         val id: LiveData<String>
             get() = _id
 
-        val movieid = 550
+        // Add the ID of movies here
+        // Some ID's we know exist:
+        // 550 = Fight Club
+        // 500 = Reservoir Dogs
+        // 157336 = Interstellar
+        // The App crashes if the ID does not exist in the tmdb api
+        val movieid = 2
 
 
     override fun onCleared() {
