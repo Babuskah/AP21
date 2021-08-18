@@ -53,7 +53,7 @@ class MovieViewModel : ViewModel() {
         // 500 = Reservoir Dogs
         // 157336 = Interstellar
         // The App crashes if the ID does not exist in the tmdb api
-        val movieid = 2
+        val movieid = 480
 
 
     override fun onCleared() {
