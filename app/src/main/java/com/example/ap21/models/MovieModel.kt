@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class MovieModel (
     @SerializedName("vote_count")
     val vote_count: Int,
-    @SerializedName("movie_overview")
+    @SerializedName("overview")
     val movie_overview: String,
     @SerializedName("vote_average")
     val vote_average: Double,
