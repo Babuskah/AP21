@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var title: TextView
     private lateinit var overview: TextView
     private lateinit var averageRate: TextView
+    private lateinit var tagline: TextView
+    private lateinit var idTV: TextView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         title = findViewById(R.id.title_tv)
         overview = findViewById(R.id.overview_tv)
         averageRate = findViewById(R.id.rating_tv)
+        tagline = findViewById(R.id.tagline_tv)
+        idTV = findViewById(R.id.id_tv)
+
 
 
         viewModel.release.observe(this, { movieString -> releasedate.post { releasedate.text =
@@ -36,6 +42,12 @@ class MainActivity : AppCompatActivity() {
             movieString.toString() }})
 
         viewModel.average.observe(this, { movieString -> averageRate.post { averageRate.text =
+            movieString.toString() }})
+
+        viewModel.tag.observe(this, { movieString -> tagline.post { tagline.text =
+            movieString.toString() }})
+
+        viewModel.id.observe(this, { movieString -> idTV.post { idTV.text =
             movieString.toString() }})
 
 

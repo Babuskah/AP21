@@ -16,5 +16,9 @@ data class MovieModel (
     @SerializedName("poster_path")
     val poster_path: String,
     @SerializedName("title")
-    val title: String
+    val title: String,
+    @SerializedName("popularity")
+    val popularity: Float,
+    @SerializedName("tagline")
+    val tagline: String
 )

@@ -39,8 +39,15 @@ class MovieViewModel : ViewModel() {
         val average: LiveData<String>
             get() = _average
 
+        private val _tag = MutableLiveData<String>()
+        val tag: LiveData<String>
+            get() = _tag
 
-    val movieid = 157336
+        private val _id = MutableLiveData<String>()
+        val id: LiveData<String>
+            get() = _id
+
+        val movieid = 550
 
 
     override fun onCleared() {
@@ -63,12 +70,16 @@ class MovieViewModel : ViewModel() {
                 val movieTitle = Html.fromHtml(movie.body()!!.title!!).toString()
                 val movieOverview = Html.fromHtml(movie.body()!!.movie_overview!!).toString()
                 val movieAverage = Html.fromHtml(movie.body()!!.vote_average!!.toString()).toString()
+                val movieTag = Html.fromHtml(movie.body()!!.tagline!!).toString()
+                val movieID = Html.fromHtml(movie.body()!!.id!!.toString()).toString()
 
                 _release.postValue(movieRelease)
                 _title.postValue(movieTitle)
                 _overview.postValue(movieOverview)
                 _average.postValue(movieAverage)
                 _movie.postValue(movie)
+                _tag.postValue(movieTag)
+                _id.postValue(movieID)
                 delay(50)
             }
         }
